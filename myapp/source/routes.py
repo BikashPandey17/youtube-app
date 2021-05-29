@@ -17,3 +17,17 @@ route(
     view_func=views.default,
     methods=["GET", "POST"]
 )
+
+route(
+    "/search/title/<search_query>",
+    endpoint="/search/title/<search_query>",
+    view_func=views.search_title,
+    methods=["GET"]
+)
+
+route(
+    "/search/description/<search_query>",
+    endpoint="/search/description/<search_query>",
+    view_func=views.search_description,
+    methods=["GET"]
+)
