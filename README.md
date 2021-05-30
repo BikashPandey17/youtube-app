@@ -54,7 +54,7 @@ set flask_app=wsgi.py (linux : export FLASK_APP=wsgi.py)
 flask run -h 0.0.0.0 -p 8091
 ```
 
-#### Development server
+#### Production server
 
 ```bash
 gunicorn --workers=2 wsgi:app -b localhost:8091
