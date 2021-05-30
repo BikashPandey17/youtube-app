@@ -77,7 +77,7 @@ This module does the following jobs:
 
 # Youtube Search api
 
-    This module provides api for performing search on the youtube data
+This module provides api for performing search on the youtube data
 
 ### To run the Flask server
 
