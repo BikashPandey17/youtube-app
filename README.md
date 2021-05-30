@@ -5,7 +5,7 @@ TODO:
 2. Requirements for the project
 3. Installing the requirements
 4. Running the Application (Schedular, Celery worker, Gunicorn Workers)
-
+```
 
 ### Create a virtual environment
 
