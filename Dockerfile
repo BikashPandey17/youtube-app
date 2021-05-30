@@ -1,7 +1,10 @@
-FROM python:alpine3.7
+FROM python:alpine3.13
 COPY . /app
 WORKDIR /app
+RUN apk update && apk add --no-cache supervisor
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+RUN mkdir -p /var/log/supervisor
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 EXPOSE 8091
-CMD [ "gunicorn", "-b", "localhost:8091", "myapp.wsgi:app", "--workers=2" ]
+CMD ["/usr/bin/supervisord"]
