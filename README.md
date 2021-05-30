@@ -1,7 +1,7 @@
 # Youtube App
 ```
 TODO:
-1. Add description of the project
+1. Add description of the project (along with system diagram)
 2. Requirements for the project
 3. Installing the requirements
 4. Running the Application (Schedular, Celery worker, Gunicorn Workers)
@@ -83,12 +83,12 @@ This module does the following jobs:
 #### Development server
 
 ```bash
-set flask_app=wsgi.py (linux : export FLASK_APP=wsgi.py)
+set FLASK_APP=myapp.wsgi.py (linux : export FLASK_APP=myapp.wsgi.py)
 flask run -h 0.0.0.0 -p 8091
 ```
 
 #### Production server
 
 ```bash
-gunicorn --workers=2 wsgi:app -b localhost:8091
+gunicorn --workers=2 myapp.wsgi:app -b localhost:8091
 ```
