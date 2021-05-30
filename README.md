@@ -10,27 +10,28 @@ TODO:
 ## Folder Structure
 
 ```
+.
 ├── Dockerfile
 ├── myapp
 │   ├── config
 │   │   ├── __base.py
 │   │   ├── __dev.py
-│   │   ├── __init__.py
 |   |   ├── .env (secret)
+│   │   ├── __init__.py
 │   │   └── __prod.py
-│   └── source
-│       ├── celery_config.py
-│       ├── celery_schedular.py
-│       ├── database
-│       │   ├── __init__.py
-│       │   └── model.py
-│       ├── __init__.py
-│       ├── routes.py
-│       ├── tasks.py
-│       └── views.py
-├── README.md
-├── requirements.txt
-└── wsgi.py
+│   ├── source
+│   │   ├── celery_config.py
+│   │   ├── celery_schedular.py
+│   │   ├── database
+│   │   │   ├── __init__.py
+│   │   │   └── model.py
+│   │   ├── __init__.py
+│   │   ├── routes.py
+│   │   ├── tasks.py
+│   │   └── views.py
+│   ├── wsgi.py
+|   └── requirements.txt
+└── README.md
 ```
 
 
