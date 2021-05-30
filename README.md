@@ -28,9 +28,9 @@ This module does the following jobs:
 
 ## Start Elastic search
 
-    ```bash
-    ./bin/elasticsearch
-    ```
+```bash
+./bin/elasticsearch
+```
 
 ## Start celery-beat (schedular)
 
@@ -49,13 +49,13 @@ This module does the following jobs:
 
 #### Development server
 
-    ```bash
-    set flask_app=wsgi.py (linux : export FLASK_APP=wsgi.py)
-    flask run -h 0.0.0.0 -p 8091
-    ```
+```bash
+set flask_app=wsgi.py (linux : export FLASK_APP=wsgi.py)
+flask run -h 0.0.0.0 -p 8091
+```
 
 #### Development server
 
-    ```bash
-    gunicorn --workers=2 wsgi:app -b localhost:8091
-    ```
+```bash
+gunicorn --workers=2 wsgi:app -b localhost:8091
+```
