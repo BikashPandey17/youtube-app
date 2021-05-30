@@ -9,6 +9,7 @@ TODO:
 
 ## Folder Structure
 
+```
 ├── Dockerfile
 ├── myapp
 │   ├── config
@@ -30,6 +31,7 @@ TODO:
 ├── README.md
 ├── requirements.txt
 └── wsgi.py
+```
 
 
 ### Create a virtual environment
