@@ -7,6 +7,31 @@ TODO:
 4. Running the Application (Schedular, Celery worker, Gunicorn Workers)
 ```
 
+## Folder Structure
+
+├── Dockerfile
+├── myapp
+│   ├── config
+│   │   ├── __base.py
+│   │   ├── __dev.py
+│   │   ├── __init__.py
+|   |   ├── .env (secret)
+│   │   └── __prod.py
+│   └── source
+│       ├── celery_config.py
+│       ├── celery_schedular.py
+│       ├── database
+│       │   ├── __init__.py
+│       │   └── model.py
+│       ├── __init__.py
+│       ├── routes.py
+│       ├── tasks.py
+│       └── views.py
+├── README.md
+├── requirements.txt
+└── wsgi.py
+
+
 ### Create a virtual environment
 
 ```python
