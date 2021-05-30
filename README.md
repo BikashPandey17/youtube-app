@@ -29,9 +29,9 @@ TODO:
 │   │   ├── routes.py
 │   │   ├── tasks.py
 │   │   └── views.py
-│   ├── wsgi.py
-|   └── requirements.txt
-└── README.md
+│   └── wsgi.py
+├── README.md
+└── requirements.txt
 ```
 
 
@@ -92,4 +92,11 @@ flask run -h 0.0.0.0 -p 8091
 
 ```bash
 gunicorn --workers=2 myapp.wsgi:app -b localhost:8091
+```
+
+## Docker commands
+
+```bash
+docker build --tag youtube-app .
+docker run -d -p 8091:8091 --net="host" youtube-app
 ```
