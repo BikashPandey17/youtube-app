@@ -26,6 +26,12 @@ This module does the following jobs:
     1. `redis-cli shutdown`
     2. `redis-server`
 
+## Start Elastic search
+
+    ```bash
+    ./bin/elasticsearch
+    ```
+
 ## Start celery-beat (schedular)
 
     `celery beat -A myapp.source.celery_schedular --loglevel=INFO`
@@ -37,12 +43,19 @@ This module does the following jobs:
 
 # Youtube Search api
 
-This module provides api for performing search on the youtube data
+    This module provides api for performing search on the youtube data
 
 ### To run the Flask server
 
-```bash
-set flask_app=wsgi.py (linux : export FLASK_APP=wsgi.py)
-flask run -h 0.0.0.0 -p 8091
-```
+#### Development server
 
+    ```bash
+    set flask_app=wsgi.py (linux : export FLASK_APP=wsgi.py)
+    flask run -h 0.0.0.0 -p 8091
+    ```
+
+#### Development server
+
+    ```bash
+    gunicorn --workers=2 wsgi:app -b localhost:8091
+    ```
