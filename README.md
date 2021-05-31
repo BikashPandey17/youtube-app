@@ -1,4 +1,9 @@
 # Youtube App
+
+Here's an Architechure diagram of the application
+
+![Application Architecture](/yt-app-arch.png)
+
 ```
 TODO:
 1. Add description of the project (along with system diagram)
@@ -31,6 +36,7 @@ TODO:
 │   │   └── views.py
 │   └── wsgi.py
 ├── README.md
+├── supervisord.conf
 └── requirements.txt
 ```
 
