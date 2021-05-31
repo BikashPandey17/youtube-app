@@ -58,6 +58,7 @@ pip install -r requirements.txt
 # Youtube Fetch Schedular
 
 This module does the following jobs:
+
     1. Fetch youtube data for a fixed search query (every 4 minutes)
     2. Saves the youtube data in database
 
@@ -83,7 +84,7 @@ This module does the following jobs:
 
 # Youtube Search api
 
-    This module provides api for performing search on the youtube data
+This module provides api for performing search on the youtube data
 
 ### To run the Flask server
 
