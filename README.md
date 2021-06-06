@@ -75,12 +75,12 @@ This module does the following jobs:
 
 ## Start celery-beat (schedular)
 
-    `celery beat -A myapp.source.celery_schedular --loglevel=INFO`
+    `celery beat -A myapp.celery_schedular --loglevel=INFO`
 
 ## Start celery-worker
 
-    In Windows: `celery worker -A myapp.source.celery -P solo --loglevel=INFO`
-    In UNIX : `celery worker -A myapp.source.celery --loglevel=INFO`
+    In Windows: `celery worker -A myapp.celery_worker.celery -P solo --loglevel=INFO`
+    In UNIX : `celery worker -A myapp.celery_worker.celery --loglevel=INFO`
 
 # Youtube Search api
 

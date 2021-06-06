@@ -3,10 +3,11 @@ import json
 from mongoengine.errors import NotUniqueError
 from flask import current_app
 
-from myapp.source import (youtube, es_client)
+from myapp.source import youtube
 from myapp.celery_worker import celery
 from myapp.config import Config
 from myapp.source.models import Youtube
+from myapp.source.es_ops import insert_index
 
 
 
@@ -35,6 +36,6 @@ def fetch_youtube_videos():
                 "title": data['snippet']['title'],
                 "description": data['snippet']['description'],
             }
-            es_client.index(index=Config.ES_INDEX, doc_type="video", id=str(data['video_id']), body=doc_to_insert)
+            insert_index(id=str(data['video_id']), data=doc_to_insert)
             print(doc_to_insert)
     return True

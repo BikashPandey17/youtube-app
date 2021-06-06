@@ -8,11 +8,11 @@ from elasticsearch import Elasticsearch
 from googleapiclient.discovery import build
 
 from myapp.config import Config
+from myapp.source.es_ops import create_index
 
 db = MongoEngine()
 cors = CORS()
 youtube = build('youtube', 'v3', developerKey=Config.YOUTUBE_API_KEY)
-es_client = Elasticsearch(HOST=Config.ES_HOST, PORT=Config.ES_PORT)
 
 
 def create_app(config_class=Config):
@@ -21,8 +21,7 @@ def create_app(config_class=Config):
     db.init_app(app)
     cors.init_app(app, resources={r"/*": {"origins": Config.CORS_ALLOWED}})
 
-    if not es_client.indices.exists(index=Config.ES_INDEX):
-        es_client.indices.create(index=Config.ES_INDEX)
+    create_index()
 
     from .search import search as search_blueprint
     app.register_blueprint(search_blueprint)
