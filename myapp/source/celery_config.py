@@ -1,11 +1,12 @@
 from celery import Celery
-from myapp.config import CELERY_RESULT_BACKEND, CELERY_BROKER_URL
+from myapp.config import Config
+
 
 def make_celery(app):
     celery = Celery(
         app.import_name,
-        backend=CELERY_RESULT_BACKEND,
-        broker=CELERY_BROKER_URL
+        backend=Config.CELERY_RESULT_BACKEND,
+        broker=Config.CELERY_BROKER_URL
     )
     TaskBase = celery.Task
 
