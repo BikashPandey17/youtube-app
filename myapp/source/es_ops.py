@@ -3,7 +3,7 @@ This file is dedicated to perform
 Elastic search operations for the application
 """
 
-from inspect import trace
+import json
 import traceback
 from elasticsearch import Elasticsearch
 

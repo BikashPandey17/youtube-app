@@ -27,6 +27,7 @@ def fetch_youtube_videos():
     if response['items']:
         for data in response['items']:
             data['video_id'] = data['id']['videoId']
+            data['published_at'] = datetime.datetime.fromisoformat(data['snippet']['publishedAt'][:-1])
             del data['id']
             try:
                 Youtube(**data).save()
