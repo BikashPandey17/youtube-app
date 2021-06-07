@@ -18,6 +18,8 @@ TODO:
 .
 ├── Dockerfile
 ├── myapp
+│   ├── celery_schedular.py
+│   ├── celery_worker.py
 │   ├── config
 │   │   ├── __base.py
 │   │   ├── __dev.py
@@ -26,18 +28,23 @@ TODO:
 │   │   └── __prod.py
 │   ├── source
 │   │   ├── celery_config.py
-│   │   ├── celery_schedular.py
-│   │   ├── database
-│   │   │   ├── __init__.py
-│   │   │   └── model.py
+│   │   ├── cli.py
+│   │   ├── es_ops.py
 │   │   ├── __init__.py
-│   │   ├── routes.py
-│   │   ├── tasks.py
-│   │   └── views.py
+│   │   ├── models.py
+│   │   ├── search
+│   │   │   ├── __init__.py
+│   │   │   └── routes.py
+│   │   └── tasks.py
 │   └── wsgi.py
 ├── README.md
+├── requirements.txt
 ├── supervisord.conf
-└── requirements.txt
+├── tests
+│   ├── __init__.py
+│   ├── test_basic.py
+│   └── test_search.py
+└── yt-app-arch.png
 ```
 
 
