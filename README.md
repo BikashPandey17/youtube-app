@@ -1,16 +1,24 @@
 # Youtube App
 
+## Project Goal
+
+To make a System that fetches recently uploaded videos (related to a fixed keyword) and exposes the videos for search in reverse chronological order of their publishing date-time from YouTube for a given tag/search query in a paginated response.
+
 Here's an Architechure diagram of the application
 
 ![Application Architecture](/yt-app-arch.png)
 
-```
-TODO:
-1. Add description of the project (along with system diagram)
-2. Requirements for the project
-3. Installing the requirements
-4. Running the Application (Schedular, Celery worker, Gunicorn Workers)
-```
+## Basic Specifications:
+
+1. We should have a background schedular running at an interval (of say 10 seconds) for fetching the latest videos for a predefined search query and should store the data of videos in a database with proper indexes.
+
+2. A GET API which returns the stored video data in a paginated response sorted in descending order os published datetime.
+
+3. A basic search API to search the stored videos using their title and description in paginated fashion.
+
+4. Dockerize the Project. (preferably docker compose to include redis and elaticsearch)
+
+5. It should be scalable and optimized.
 
 ## Folder Structure
 
@@ -47,21 +55,15 @@ TODO:
 └── yt-app-arch.png
 ```
 
+## Installing Requirements
 
-### Create a virtual environment
+Using a virtualenv is preferred
 
-```python
-pip install virtualenv
+1. Python and pip (requirements.txt)
+2. Redis
+3. ElasticSearch
+4. MongoDB
 
-python -m virtualenv venv
-```
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requirements.
-
-```bash
-source venv/bin/activate (windows: venv\Scripts\activate)
-pip install -r requirements.txt
-```
 # Youtube Fetch Schedular
 
 This module does the following jobs:
